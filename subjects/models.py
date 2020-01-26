@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from classrooms.models import ClassRoom
 
 # Create your models here.
 
@@ -12,4 +13,4 @@ class Subject(models.Model):
         default=30,
         validators=[MaxValueValidator(30), MinValueValidator(120)]
     )
-    classroom = models.OneToOneField()
+    classroom = models.OneToOneField(ClassRoom)
