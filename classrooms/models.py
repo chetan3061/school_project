@@ -16,7 +16,7 @@ class ClassRoom(models.Model):
     ]
     name = models.CharField(max_length=255, unique=True)
     capacity = models.IntegerField()
-    web_lecture_support = models.BooleanField(default=False)
+    web_lecture_support = models.BooleanField(default=True)
     shape = models.CharField(max_length=3, choices=shape_choices)
 
     def __str__(self):
