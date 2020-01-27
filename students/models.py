@@ -21,6 +21,6 @@ class PointOfContact(models.Model):
     name = models.CharField(max_length=255)
     contact_number = models.CharField(max_length=12)
     relation = models.CharField(max_length=50)
-    student = models.ForeignKey(Student)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
 
 
