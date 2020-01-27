@@ -9,3 +9,4 @@ class Teacher(models.Model):
     doj = models.DateField(auto_now_add=True)
     subjects = models.ManyToManyField(Subject)
     salary = models.IntegerField()
+    takes_web_lecture = models.BooleanField(default=False)
