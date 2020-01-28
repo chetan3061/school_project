@@ -1,6 +1,5 @@
 from django.db import models
-from django.db.models.signals import post_save
-# Create your models here.
+from subjects.models import Subject
 
 
 class Student(models.Model):
@@ -8,6 +7,7 @@ class Student(models.Model):
     doj = models.DateField(auto_now_add=True)
     standard = models.IntegerField()
     ranking = models.IntegerField(null=True)
+    subjects = models.ManyToManyField(Subject, blank=True, related_name='students')
 
     @property
     def roll_no(self):

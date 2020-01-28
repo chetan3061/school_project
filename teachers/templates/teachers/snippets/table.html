@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">No</th>
+      <th scope="col" class="text-center">Name</th>
+      <th scope="col" class="text-center">Teaching from </th>
+      <th scope="col" class="text-center">Subjects Teaching</th>
+    </tr>
+  </thead>
+  {%for teacher in teacher_list%}
+  <tbody>
+    <tr>
+      <th scope="row" class="text-center">{{forloop.counter}}</th>
+      <td class="text-center">{{teacher.name}}</td>
+      <td class="text-center">{{teacher.doj}}</td>
+      <td class="text-center">
+        {% for subject in teacher.subject_list%}
+        <p>{{subject.name}}</p>
+        {%endfor%}
+      </td>
+
+    </tr>
+  </tbody>
+  {%endfor%}
+</table>

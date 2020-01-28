@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block body_block%}
+    <div class="row ">
+        <div class="col-12">
+            <h1 class="text-center">Welcome to {{school_name}}</h1>
+            <a href="{% url 'teacher:teacher_salary_gt_12l'%}"><h2>Click Here for students taught by teachers earning more than 1 lakh/month</h2></a>
+        </div>
+    </div>
+{%endblock%}

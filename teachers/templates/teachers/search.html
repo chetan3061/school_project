@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+{% if teachers|length > 0 %}
+
+{%for teacher in teachers%}
+<h1 class="text-center">{{teacher.name}} teaches</h1>
+<div class="row ">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="text-center">subject</th>
+              <th scope="col" class="text-center" >students attending</th>
+            </tr>
+          </thead>
+            {% for subject in teacher.teacher_subjects%}
+          <tbody>
+            <tr>
+              <td class="text-center">{{subject.name}}</td>
+              <td class="text-center">{% for student in subject.student_list%}{{student.name}}<br>{%endfor%}</td>
+            </tr>
+          </tbody>
+          {%endfor%}
+        </table>
+</div>
+{%endfor%}
+{%else %}
+<p>no teachers found for given name</p>
+{%endif%}
+{%endblock%}

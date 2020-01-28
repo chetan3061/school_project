@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">classroom_number</th>
+      <th scope="col">classroom Type</th>
+      <th scope="col" class="mx-auto text-center">Subjects</th>
+    </tr>
+  </thead>
+  {%for classroom in classroom_list%}
+  <tbody>
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{classroom.name}}</td>
+      <td>{{classroom.shape}}</td>
+      {% for subject in classroom.subject_list%}
+      <td>{{subject.name}}</td>
+      {%endfor%}
+    </tr>
+  </tbody>
+  {%endfor%}
+</table>

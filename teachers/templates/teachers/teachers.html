@@ -1,0 +1,6 @@
+{%extends 'base.html'%}
+{%block body_block%}
+    <div class="row ">
+        {% include 'teachers/snippets/table.html' with object_list=teacher_list%}
+    </div>
+{%endblock%}

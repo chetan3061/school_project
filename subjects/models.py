@@ -11,9 +11,9 @@ class Subject(models.Model):
     total_duration = models.IntegerField()
     per_class_duration = models.IntegerField(
         default=30,
-        validators=[MaxValueValidator(120), MinValueValidator(300)]
+        validators=[MaxValueValidator(120), MinValueValidator(30)]
     )
-    classroom = models.OneToOneField(ClassRoom, on_delete=models.DO_NOTHING)
+    classroom = models.ForeignKey(ClassRoom, on_delete=models.DO_NOTHING, related_name='subjects')
 
     def __str__(self):
         return self.name
