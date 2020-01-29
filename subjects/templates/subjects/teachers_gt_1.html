@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block body_block%}
+    <div class="row ">
+        {%for subject in subjects%}
+        <div class="col-3">
+        <h1>{{subject.name}}</h1>
+        <p>No of teachers {{subject.num_teachers}}</p>
+            <p>No of students {{subject.student_list|length}}</p>
+        </div>
+        {%endfor%}
+    </div>
+{%endblock%}

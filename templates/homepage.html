@@ -4,6 +4,8 @@
         <div class="col-12">
             <h1 class="text-center">Welcome to {{school_name}}</h1>
             <a href="{% url 'teacher:teacher_salary_gt_12l'%}"><h2>Click Here for students taught by teachers earning more than 1 lakh/month</h2></a>
+            <a href="{% url 'subjects:teachers_gt_1'%}">No of students, No of teachers, and total hours required for subjects that are taught by more than 1</a>
         </div>
     </div>
 {%endblock%}
+

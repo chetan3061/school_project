@@ -7,7 +7,7 @@ from subjects.models import Subject
 class Teacher(models.Model):
     name = models.CharField(max_length=255)
     doj = models.DateField()
-    subjects = models.ManyToManyField(Subject)
+    subjects = models.ManyToManyField(Subject, related_name='teachers')
     salary = models.IntegerField()
     takes_web_lecture = models.BooleanField(default=False)
 

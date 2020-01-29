@@ -27,7 +27,7 @@ class TeacherList(TemplateView):
 
 
 def stu_teacher_salary_gt_alac(request):
-    student_query = Student.objects.filter(subjects__teacher__salary__gt=1200000).only('name')
+    student_query = Student.objects.filter(subjects__teachers__salary__gt=1200000).only('name')
     students = list(student_query)
     return render(request, 'teachers/teacher_salary_gt_12l.html', {'students': students})
 
@@ -40,3 +40,5 @@ def teacher_search(request):
         teachers = Teacher.objects.filter(name__contains=teacher).prefetch_related(Prefetch('subjects__students', queryset=Student.objects.only('name'), to_attr='student_list'))
         teachers = list(teachers)
         return render(request, 'teachers/search.html', {'teachers': teachers})
+
+

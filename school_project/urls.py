@@ -22,4 +22,5 @@ urlpatterns = [
     path('', HomePage.as_view(), name='home_page'),
     path('classroom/', include('classrooms.urls', namespace='classroom')),
     path('teacher/', include('teachers.urls', namespace='teacher')),
+    path('subjects/', include('subjects.urls', namespace='subjects'))
 ]
