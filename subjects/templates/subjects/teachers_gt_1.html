@@ -6,6 +6,7 @@
         <h1>{{subject.name}}</h1>
         <p>No of teachers {{subject.num_teachers}}</p>
             <p>No of students {{subject.student_list|length}}</p>
+            <p>Total Hours required by the subject <b>{{subject.total_duration}}</b> hrs</p>
         </div>
         {%endfor%}
     </div>
